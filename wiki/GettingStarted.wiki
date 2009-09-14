@@ -109,7 +109,7 @@ Elapsed time 2,109375 sec
 
 *Detecting an error during upgrade to a new version*
 
-8. run upgrade (example3)
+8. Run upgrade (example3)
 {{{
 C:\sqlmake>sqlmake -upgrade userid=smdemo/smdemo@localhost:1521/orcl scripts=.\examples\example3
 SQLMake, Copyright Mitja Golouh 2008, mitja.golouh@gmail.com
@@ -133,7 +133,7 @@ Elapsed time 0,71875 sec
 
 *Resolve an error during upgrade and clearing sqlmake error status*
 
-9. check schema version and status 
+9. Check schema version and status 
 
 {{{
 C:\sqlmake>sqlmake -status userid=smdemo/smdemo@localhost:1521/orcl
@@ -149,7 +149,7 @@ Schema deployment is invalid
 Elapsed time 1,40625 sec
 }}}
 
-10. list errors 
+10. List errors 
 
 {{{
 C:\sqlmake>sqlmake -list_errors userid=smdemo/smdemo@localhost:1521/orcl
@@ -168,7 +168,7 @@ CREATE SEUENCE TOWN_SEQ
 Elapsed time 0,828125 sec
 }}}
 
-11. open sql*plus and manually fix the problem
+11. Open sql*plus and manually fix the problem
 
 {{{
 C:\sqlmake>sqlplus smdemo/smdemo
@@ -191,7 +191,7 @@ Disconnected from Oracle Database 11g Enterprise Edition Release 11.1.0.6.0 - Pr
 With the OLAP option
 }}}
 
-12. clear errors from sqlmake metadata repository
+12. Clear errors from sqlmake metadata repository
 
 {{{
 C:\sqlmake>sqlmake -clear_errors userid=smdemo/smdemo@localhost:1521/orcl
@@ -204,7 +204,7 @@ Action: Clear all errors from last install
 Elapsed time 0,546875 sec
 }}}
 
-13. check schema version and status 
+13. Check schema version and status 
 
 {{{
 C:\sqlmake>sqlmake -status userid=smdemo/smdemo@localhost:1521/orcl
@@ -267,13 +267,13 @@ C:\sqlmake>sqlmake /db -plsql userid=smdemo/smdemo@localhost:1521/orcl scripts=.
 SQLMake, Copyright Mitja Golouh 2008, mitja.golouh@gmail.com
 Revision 8
 No config found. Using default settings
-Action: Sync PL/SQL differencies to database
+Action: Sync PL/SQL differences to database
 
 Loading plsql command list
   Processing scripts in directory .\examples\example3\smdemo\plsql ...
   Processing database catalog ...
 
-PL/SQL differencies
+PL/SQL differences
   Object only on filesystem
     Creating FUNCTION GET_COUNTRY_NAME
   Object only in DB
@@ -309,13 +309,13 @@ C:\sqlmake>sqlmake /db -plsql userid=smdemo/smdemo@localhost:1521/orcl scripts=.
 SQLMake, Copyright Mitja Golouh 2008, mitja.golouh@gmail.com
 Revision 8
 No config found. Using default settings
-Action: Sync PL/SQL differencies to database
+Action: Sync PL/SQL differences to database
 
 Loading plsql command list
   Processing scripts in directory .\examples\playground\smdemo\plsql ...
   Processing database catalog ...
 
-PL/SQL differencies
+PL/SQL differences
   Object only on filesystem
     Creating FUNCTION GET_COUNTRY_LNAME
   Object only in DB
@@ -357,13 +357,13 @@ C:\sqlmake>sqlmake /db -plsql userid=smdemo/smdemo@localhost:1521/orcl scripts=.
 SQLMake, Copyright Mitja Golouh 2008, mitja.golouh@gmail.com
 Revision 8
 No config found. Using default settings
-Action: Sync PL/SQL differencies to database
+Action: Sync PL/SQL differences to database
 
 Loading plsql command list
   Processing scripts in directory .\examples\playground\smdemo\plsql ...
   Processing database catalog ...
 
-PL/SQL differencies
+PL/SQL differences
   Object only on filesystem
     None
   Object only in DB
@@ -377,4 +377,4 @@ Elapsed time 1,59375 sec
 
 ==What next?==
 
-Sqlmake actions are intentionally kept very atomically. Use NANT to combine them in powerful deployment combinations suited to your environment.
+Sqlmake actions are intentionally kept very atomically. Use NANT to combine them in powerful deployment combination suited to your environment.
