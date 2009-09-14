@@ -1,4 +1,5 @@
 #summary Tutorial to get started with sqlmake
+#sidebar 1
 = Hands on tutorial for sqlmake =
 
 == Is sqlmake for you? == 
