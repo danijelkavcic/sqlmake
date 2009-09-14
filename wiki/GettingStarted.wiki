@@ -1,0 +1,380 @@
+#summary Tutorial to get started with sqlmake
+= Hands on tutorial for sqlmake =
+
+== Is sqlmake for you? == 
+Sqlmake is a deployment tool for sql scripts with support for Oracle only databases. It is a windows .NET executable so it requires Windows OS and .NET runtime. Oracle client is also required because sqlmake interacts directly with Oracle database.
+
+Sqlmake was created to support easy configuration management of sql scripts with support of automatic deployment of schema (modifications). With sqlmake it is very easy to deploy database schema in a new environment, keep it up to date with new delta scripts and new versions of pl/sql packages.
+
+Following goals were set during implementation of the tool:
+  * Database schema is not only about tables and indexes. PL/SQL is vital part of the database development process and must be equally supported.
+  * There must be minimal or no extra work for database developer with preparing sql scripts 
+  * Existing database modeling tools, pl/sql development tools and other must coexist with sqlmake 
+
+== How it works?==
+Sqlmake requires sql scripts to be divided in the following three groups:
+  * Optional data model folder where you keep data model baseline scripts
+  * Upgrade folder where you keep sql delta scripts for datamodel upgrade
+  * Plsql folder where you keep stored procedures, views, etc
+SQL scripts content requires no additional choreography, plain old SQL*Plus script syntax is used. Sqlmake ignores all SQL*Plus commands for now.
+
+How sql scripts are organized inside the three groups is up to the user (except for the upgrade delta scripts which must conform to a naming convention). All SQL commands can be in one big sql scripts, every SQL command can be in its own file, subdirectories can be created and so on. This makes it very flexible to compensate output of different data modeling tools generators. 
+
+Delta upgrade scripts have to be named according to following naming convention: "VERSION_CUSTOMNAME.sql".  For example 121_create_table_employees.sql. Version is an incremental numerical number used to determine correct sequence when applying delta scripts.
+
+Much like to the directory structure when you run sqlmake you have an option to:
+  * Install baseline sql scripts
+  * Upgrade schema with delta sql scripts or 
+  * Deploy plsql code
+After invocation sqlmake parses sql scripts and executes SQL commands against an Oracle database. No SQL*Plus or other external tool is required. 
+  * When installing data model sqlmake automatically parses all scripts to determine the correct order of sql statements. There is no need to separate SQL commands in tables.sql, indexes.sql, constraints.sql and so on.
+  * When upgrading data model sqlmake automatically determines current schema version and applies only necessary delta scripts
+  * When deploying plsql code sqlmake applies only new, modified or deleted plsql code. It does this by doing a diff between plsql code on filesystem and plsql code in database. If there is no difference nothing is modified in the database schema. 
+
+At the end sqlmake updates schema metadata with current schema version (kept in table SQLMAKE) and reports status info.
+== Try it == 
+Sqlmake requires Windows, .NET 2.0 (or higher) runtime and an Oracle Client 10g (or higher). To run these examples you need access to an Oracle database. 
+
+*Download distribution package and prepare a new empty oracle schema*
+
+1. From the downloads page download the distribution zip file. 
+
+2. Unzip this in c:\. 
+
+3. Prepare a new oracle user SMDEMO with password SMDEMO 
+
+4. Grant CONNECT and RESOURCE roles to oracle user SMDEMO
+{{{
+C:\sqlmake>sqlplus system/manager
+SQL*Plus: Release 11.1.0.6.0 - Production on Pon Sep 14 17:03:08 2009
+Copyright (c) 1982, 2007, Oracle.  All rights reserved.
+Connected to:
+Oracle Database 11g Enterprise Edition Release 11.1.0.6.0 - Production
+With the OLAP option
+SQL> create user smdemo identified by smdemo;
+User created.
+SQL> grant connect, resource to smdemo;
+Grant succeeded.
+}}}
+=== PART I: Datamodel baseline deployment ===
+*Deploy schema to a new clean environment*
+
+5. Open a command prompt cmd.exe in the unziped directory
+
+6. Deploy datamodel baseline (example1)
+{{{
+C:\sqlmake>sqlmake -install userid=smdemo/smdemo@localhost:1521/orcl scripts=.\examples\example1
+SQLMake, Copyright Mitja Golouh 2008, mitja.golouh@gmail.com
+Revision 8
+Loading settings from config in scripts folder .\examples\example1\sqlmake.config
+Action: Installs schema based on install scripts
+
+Creating sqlmake registry table ...
+Searching for sql scripts ...
+Loading sql commands from scripts ...
+  Target datamodel version in scripts is 1
+Executing SQL commands in predefined order...
+===========  TABLE ======================================
+create table countries...
+
+Version 1 of datamodel installed
+Installation successful
+Elapsed time 0,921875 sec
+}}}
+
+===PART II: Datamodel upgrade===
+*Upgrade schema to a new version*
+
+7. Run upgrade (example2)
+{{{
+C:\sqlmake>sqlmake -upgrade userid=smdemo/smdemo@localhost:1521/orcl scripts=.\examples\example2
+SQLMake, Copyright Mitja Golouh 2008, mitja.golouh@gmail.com
+Revision 8
+Loading settings from config in scripts folder .\examples\example2\sqlmake.config
+Action: Upgrades schema based on upgrade scripts
+
+Upgrading data model ...
+
+Execute script .\examples\example2\smdemo\upgrade\2_create_table_towns.sql
+  create table towns...
+  create primary key towns_pk on towns...
+  create foreign key towns_countries_fk on towns...
+  create index towns_countries_fk_i on towns...
+Setting datamodel version to 2...
+Installation of upgrade script 2_create_table_towns.sql successful
+
+All upgrade scripts applied
+Elapsed time 2,109375 sec
+}}}
+
+*Detecting an error during upgrade to a new version*
+
+8. run upgrade (example3)
+{{{
+C:\sqlmake>sqlmake -upgrade userid=smdemo/smdemo@localhost:1521/orcl scripts=.\examples\example3
+SQLMake, Copyright Mitja Golouh 2008, mitja.golouh@gmail.com
+Revision 8
+Loading settings from config in scripts folder .\examples\example3\sqlmake.config
+Action: Upgrades schema based on upgrade scripts
+
+Upgrading data model ...
+
+Execute script .\examples\example3\smdemo\upgrade\3_trigger_an_error.sql
+  create seuence town_seq...
+Error when executing SQL command
+ORA-00901: invalid CREATE command
+CREATE SEUENCE TOWN_SEQ
+
+Setting datamodel version to 3...
+Errors found during upgrade to version 3
+Upgrade failed
+Elapsed time 0,71875 sec
+}}}
+
+*Resolve an error during upgrade and clearing sqlmake error status*
+
+9. check schema version and status 
+
+{{{
+C:\sqlmake>sqlmake -status userid=smdemo/smdemo@localhost:1521/orcl
+SQLMake, Copyright Mitja Golouh 2008, mitja.golouh@gmail.com
+Revision 8
+No config found. Using default settings
+Action: Prints target schema status
+
+Current data model version   : 3
+Errors during last deployment: 1
+Invalid object(s)            : 0
+Schema deployment is invalid
+Elapsed time 1,40625 sec
+}}}
+
+10. list errors 
+
+{{{
+C:\sqlmake>sqlmake -list_errors userid=smdemo/smdemo@localhost:1521/orcl
+SQLMake, Copyright Mitja Golouh 2008, mitja.golouh@gmail.com
+Revision 8
+No config found. Using default settings
+Action: Lists all errors from last install
+
+
+PROMPT   create seuence town_seq...
+REM Sequence id: 1
+REM .\examples\example3\smdemo\upgrade\3_trigger_an_error.sql, Line no: 1
+REM ORA-00901: invalid CREATE command
+CREATE SEUENCE TOWN_SEQ
+/
+Elapsed time 0,828125 sec
+}}}
+
+11. open sql*plus and manually fix the problem
+
+{{{
+C:\sqlmake>sqlplus smdemo/smdemo
+
+SQL*Plus: Release 11.1.0.6.0 - Production on Pon Sep 14 17:48:01 2009
+
+Copyright (c) 1982, 2007, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Enterprise Edition Release 11.1.0.6.0 - Production
+With the OLAP option
+
+SQL> create sequence town_seq;
+
+Sequence created.
+
+SQL> exit
+Disconnected from Oracle Database 11g Enterprise Edition Release 11.1.0.6.0 - Production
+With the OLAP option
+}}}
+
+12. clear errors from sqlmake metadata repository
+
+{{{
+C:\sqlmake>sqlmake -clear_errors userid=smdemo/smdemo@localhost:1521/orcl
+SQLMake, Copyright Mitja Golouh 2008, mitja.golouh@gmail.com
+Revision 8
+No config found. Using default settings
+Action: Clear all errors from last install
+
+1 error(s) cleared
+Elapsed time 0,546875 sec
+}}}
+
+13. check schema version and status 
+
+{{{
+C:\sqlmake>sqlmake -status userid=smdemo/smdemo@localhost:1521/orcl
+SQLMake, Copyright Mitja Golouh 2008, mitja.golouh@gmail.com
+Revision 8
+No config found. Using default settings
+Action: Prints target schema status
+
+Current data model version   : 3
+Errors during last deployment: 0
+Errors cleared after install : 1
+Invalid object(s)            : 0
+Installation successful
+Elapsed time 0,75 sec
+}}}
+
+*Create a new upgrade script*
+
+14. Open notepad.exe (in real life you would be using your data modeling tool to create delta script)
+
+15. Copy/paste following text
+
+{{{
+ALTER TABLE COUNTRIES
+ ADD (LNAME VARCHAR2(50) NULL)
+/
+}}}
+
+16. Save in playground as C:\sqlmake\examples\playground\smdemo\upgrade\4_add_column_countries.sql
+
+*Deploy a new upgrade script*
+
+17. Run sqlmake upgrade (playground)
+
+{{{
+C:\sqlmake>sqlmake -upgrade userid=smdemo/smdemo@localhost:1521/orcl scripts=.\examples\playground
+SQLMake, Copyright Mitja Golouh 2008, mitja.golouh@gmail.com
+Revision 8
+Loading settings from config in scripts folder .\examples\playground\sqlmake.config
+Action: Upgrades schema based on upgrade scripts
+
+Upgrading data model ...
+
+Execute script .\examples\playground\smdemo\upgrade\4_add_column_countries.sql
+  alter table countries...
+Setting datamodel version to 4...
+Installation of upgrade script 4_add_column_countries.sql successful
+
+All upgrade scripts applied
+Elapsed time 1,515625 sec
+}}}
+
+===PART III: Working with PL/SQL code===
+
+*Deploy PL/SQL code*
+
+18. Run PL/SQL code synchronization (example3)
+{{{
+C:\sqlmake>sqlmake /db -plsql userid=smdemo/smdemo@localhost:1521/orcl scripts=.\examples\example3\smdemo\plsql
+SQLMake, Copyright Mitja Golouh 2008, mitja.golouh@gmail.com
+Revision 8
+No config found. Using default settings
+Action: Sync PL/SQL differencies to database
+
+Loading plsql command list
+  Processing scripts in directory .\examples\example3\smdemo\plsql ...
+  Processing database catalog ...
+
+PL/SQL differencies
+  Object only on filesystem
+    Creating FUNCTION GET_COUNTRY_NAME
+  Object only in DB
+    None
+  Different objects
+    None
+  Equal objects count:
+    0 object(s)
+Elapsed time 1,390625 sec
+}}}
+
+*Add a new PL/SQL package*
+
+19. Open notepad.exe (in real life you would be using your PL/SQL development tool)
+
+20. Copy/paste following text
+{{{
+create or replace function get_country_lname(i_id in varchar2) return varchar2
+is
+begin
+  return 'TEST LOWER NAME';
+end;
+/
+}}}
+
+21. Save in playground as C:\sqlmake\examples\playground\smdemo\plsql\get_country_lname.fnc
+
+*Deploy a new PL/SQL package*
+
+22. Run sqlmake plsql synchronization (playground)
+{{{
+C:\sqlmake>sqlmake /db -plsql userid=smdemo/smdemo@localhost:1521/orcl scripts=.\examples\playground\smdemo\plsql
+SQLMake, Copyright Mitja Golouh 2008, mitja.golouh@gmail.com
+Revision 8
+No config found. Using default settings
+Action: Sync PL/SQL differencies to database
+
+Loading plsql command list
+  Processing scripts in directory .\examples\playground\smdemo\plsql ...
+  Processing database catalog ...
+
+PL/SQL differencies
+  Object only on filesystem
+    Creating FUNCTION GET_COUNTRY_LNAME
+  Object only in DB
+    None
+  Different objects
+    None
+  Equal objects count:
+    1 object(s)
+Elapsed time 1,234375 sec
+}}}
+
+*Modify an existing PL/SQL package*
+
+23. Open get_country_lname.fnc from playground in notepad.exe (in real life you would be using your PL/SQL development tool)
+
+24. Modify pl/sql function to return values from database
+{{{
+create or replace function get_country_lname(i_id in varchar2) return varchar2
+is
+  ret_val COUNTRIES.LNAME%TYPE;
+begin
+  select lname
+  into ret_val
+  from countries
+  where a3 = i_id;
+
+  return ret_Val;
+end;
+/
+}}}
+
+25. Save modified function
+
+*Deploy modified PL/SQL package*
+
+26. Run sqlmake plsql synchronization (playground)
+{{{
+C:\sqlmake>sqlmake /db -plsql userid=smdemo/smdemo@localhost:1521/orcl scripts=.\examples\playground\smdemo\plsql
+SQLMake, Copyright Mitja Golouh 2008, mitja.golouh@gmail.com
+Revision 8
+No config found. Using default settings
+Action: Sync PL/SQL differencies to database
+
+Loading plsql command list
+  Processing scripts in directory .\examples\playground\smdemo\plsql ...
+  Processing database catalog ...
+
+PL/SQL differencies
+  Object only on filesystem
+    None
+  Object only in DB
+    None
+  Different objects
+    Modified FUNCTION GET_COUNTRY_LNAME
+  Equal objects count:
+    1 object(s)
+Elapsed time 1,59375 sec
+}}}
+
+==What next?==
+
+Sqlmake actions are intentionally kept very atomically. Use NANT to combine them in powerful deployment combinations suited to your environment.
