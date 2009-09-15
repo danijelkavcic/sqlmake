@@ -20,9 +20,9 @@ Sqlmake requires sql scripts to be divided in the following three groups:
   * Plsql folder where you keep stored procedures, views, etc
 SQL scripts content requires no additional choreography, plain old SQL*Plus script syntax is used. Sqlmake ignores all SQL*Plus commands for now.
 
-How sql scripts are organized inside the three groups is up to the user (except for the upgrade delta scripts which must conform to a naming convention). All SQL commands can be in one big sql scripts, every SQL command can be in its own file, subdirectories can be created and so on. This makes it very flexible to compensate output of different data modeling tools generators. 
+How sql scripts are organized inside the three groups is up to the user (except for the upgrade delta scripts which must conform to a naming convention). For example: all SQL commands can be in one big sql scripts, every SQL command can be in its own file, subdirectories can be created and so on. This makes it very flexible to compensate output of different data modeling tools generators. 
 
-Delta upgrade scripts have to be named according to following naming convention: "VERSION_CUSTOMNAME.sql".  For example 121_create_table_employees.sql. Version is an incremental numerical number used to determine correct sequence when applying delta scripts.
+Delta upgrade scripts have to be named according to following naming convention: "version_scriptdesc.sql".  For example 121_create_table_employees.sql. Version is an incremental numerical value used to determine correct sequence when applying delta scripts.
 
 Much like to the directory structure when you run sqlmake you have an option to:
   * Install baseline sql scripts
