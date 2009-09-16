@@ -292,6 +292,8 @@ Elapsed time 0,796875 sec
 
 14. Open notepad.exe (in real life you would be using your data modeling tool to create delta script)
 
+_Be careful that notepad will not append default suffix .txt to the filename!_
+
 15. Copy/paste following text
 
 {{{
