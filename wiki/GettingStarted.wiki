@@ -45,7 +45,9 @@ Sqlmake requires Windows, .NET 2.0 (or higher) runtime and an Oracle Client 10g 
 
 3. Prepare a new oracle user SMDEMO with password SMDEMO 
 
-4. Grant system privileges to oracle user SMDEMO
+4. Open a command prompt cmd.exe in c:\sqlmake-1.0.0.8
+
+5. Grant system privileges to oracle user SMDEMO
 {{{
 C:\sqlmake-1.0.0.8>sqlplus system/trivial
 
@@ -117,14 +119,18 @@ With the OLAP option
 
 C:\sqlmake-1.0.0.8>
 }}}
+
+*Set path to sqlmake bin folder*
+{{{
+C:\sqlmake-1.0.0.8>set PATH=c:\sqlmake-1.0.0.8\bin;%PATH%
+}}}
+
 === PART I: Datamodel baseline deployment ===
 *Deploy schema to a new clean environment*
 
-5. Open a command prompt cmd.exe
-
 6. Deploy datamodel baseline (change directory to examples\example1)
 {{{
-C:\sqlmake-1.0.0.8\examples\example1>..\..\bin\sqlmake -install userid=smdemo/smdemo@localhost:1521/orcl scripts=.
+C:\sqlmake-1.0.0.8\examples\example1>sqlmake -install userid=smdemo/smdemo@localhost:1521/orcl scripts=.
 SQLMake, Copyright Mitja Golouh 2008, mitja.golouh@gmail.com
 Revision 8
 Loading settings from config in scripts folder .\sqlmake.config
@@ -148,7 +154,7 @@ Elapsed time 1,984375 sec
 
 7. Run upgrade (change directory to examples\example2)
 {{{
-C:\sqlmake-1.0.0.8\examples\example2>..\..\bin\sqlmake -upgrade userid=smdemo/smdemo@localhost:1521/orcl scripts=.
+C:\sqlmake-1.0.0.8\examples\example2>sqlmake -upgrade userid=smdemo/smdemo@localhost:1521/orcl scripts=.
 SQLMake, Copyright Mitja Golouh 2008, mitja.golouh@gmail.com
 Revision 8
 Loading settings from config in scripts folder .\sqlmake.config
@@ -172,7 +178,7 @@ Elapsed time 1,984375 sec
 
 8. Run upgrade (change directory to examples\example3)
 {{{
-C:\sqlmake-1.0.0.8\examples\example3>..\..\bin\sqlmake -upgrade userid=smdemo/smdemo@localhost:1521/orcl scripts=.
+C:\sqlmake-1.0.0.8\examples\example3>sqlmake -upgrade userid=smdemo/smdemo@localhost:1521/orcl scripts=.
 SQLMake, Copyright Mitja Golouh 2008, mitja.golouh@gmail.com
 Revision 8
 Loading settings from config in scripts folder .\sqlmake.config
@@ -197,7 +203,7 @@ Elapsed time 1,125 sec
 9. Check schema version and status 
 
 {{{
-C:\sqlmake-1.0.0.8\examples\example3>..\..\bin\sqlmake -status userid=smdemo/smdemo@localhost:1521/orcl
+C:\sqlmake-1.0.0.8\examples\example3>sqlmake -status userid=smdemo/smdemo@localhost:1521/orcl
 SQLMake, Copyright Mitja Golouh 2008, mitja.golouh@gmail.com
 Revision 8
 Loading settings from config in current folder C:\sqlmake-1.0.0.8\examples\example3\sqlmake.config
@@ -213,7 +219,7 @@ Elapsed time 0,84375 sec
 10. List errors 
 
 {{{
-C:\sqlmake-1.0.0.8\examples\example3>..\..\bin\sqlmake -list_errors userid=smdemo/smdemo@localhost:1521/orcl
+C:\sqlmake-1.0.0.8\examples\example3>sqlmake -list_errors userid=smdemo/smdemo@localhost:1521/orcl
 SQLMake, Copyright Mitja Golouh 2008, mitja.golouh@gmail.com
 Revision 8
 Loading settings from config in current folder C:\sqlmake-1.0.0.8\examples\example3\sqlmake.config
@@ -255,7 +261,7 @@ With the OLAP option
 12. Clear errors from sqlmake metadata repository
 
 {{{
-C:\sqlmake-1.0.0.8\examples\example3>..\..\bin\sqlmake -clear_errors userid=smdemo/smdemo@localhost:1521/orcl
+C:\sqlmake-1.0.0.8\examples\example3>sqlmake -clear_errors userid=smdemo/smdemo@localhost:1521/orcl
 SQLMake, Copyright Mitja Golouh 2008, mitja.golouh@gmail.com
 Revision 8
 Loading settings from config in current folder C:\sqlmake-1.0.0.8\examples\example3\sqlmake.config
@@ -268,7 +274,7 @@ Elapsed time 0,578125 sec
 13. Check schema version and status 
 
 {{{
-C:\sqlmake-1.0.0.8\examples\example3>..\..\bin\sqlmake -status userid=smdemo/smdemo@localhost:1521/orcl
+C:\sqlmake-1.0.0.8\examples\example3>sqlmake -status userid=smdemo/smdemo@localhost:1521/orcl
 SQLMake, Copyright Mitja Golouh 2008, mitja.golouh@gmail.com
 Revision 8
 Loading settings from config in current folder C:\sqlmake-1.0.0.8\examples\example3\sqlmake.config
@@ -301,7 +307,7 @@ ALTER TABLE COUNTRIES
 17. Run sqlmake upgrade (change directory to examples\playground)
 
 {{{
-C:\sqlmake-1.0.0.8\examples\playground>..\..\bin\sqlmake -upgrade userid=smdemo/smdemo@localhost:1521/orcl scripts=.
+C:\sqlmake-1.0.0.8\examples\playground>sqlmake -upgrade userid=smdemo/smdemo@localhost:1521/orcl scripts=.
 SQLMake, Copyright Mitja Golouh 2008, mitja.golouh@gmail.com
 Revision 8
 Loading settings from config in scripts folder .\sqlmake.config
@@ -324,7 +330,7 @@ Elapsed time 1,8125 sec
 
 18. Run PL/SQL code synchronization (change directory to examples\example3)
 {{{
-C:\sqlmake-1.0.0.8\examples\example3>..\..\bin\sqlmake /db -plsql userid=smdemo/smdemo@localhost:1521/orcl scripts=.
+C:\sqlmake-1.0.0.8\examples\example3>sqlmake /db -plsql userid=smdemo/smdemo@localhost:1521/orcl scripts=.
 SQLMake, Copyright Mitja Golouh 2008, mitja.golouh@gmail.com
 Revision 8
 Loading settings from config in scripts folder .\sqlmake.config
@@ -366,7 +372,7 @@ end;
 
 22. Run sqlmake plsql synchronization
 {{{
-C:\sqlmake-1.0.0.8\examples\playground>..\..\bin\sqlmake /db -plsql userid=smdemo/smdemo@localhost:1521/orcl scri
+C:\sqlmake-1.0.0.8\examples\playground>sqlmake /db -plsql userid=smdemo/smdemo@localhost:1521/orcl scri
 SQLMake, Copyright Mitja Golouh 2008, mitja.golouh@gmail.com
 Revision 8
 Loading settings from config in scripts folder .\sqlmake.config
@@ -414,7 +420,7 @@ end;
 
 26. Run sqlmake plsql synchronization (playground)
 {{{
-C:\sqlmake-1.0.0.8\examples\playground>..\..\bin\sqlmake /db -plsql userid=smdemo/smdemo@localhost:1521/orcl scripts=.
+C:\sqlmake-1.0.0.8\examples\playground>sqlmake /db -plsql userid=smdemo/smdemo@localhost:1521/orcl scripts=.
 SQLMake, Copyright Mitja Golouh 2008, mitja.golouh@gmail.com
 Revision 8
 Loading settings from config in scripts folder .\sqlmake.config
