@@ -1,0 +1,39 @@
+#summary Nant targets
+#labels Featured
+= Using sqlmake with Nant =
+
+USING NANT TARGETS
+
+==Creating a new schema from a scratch==
+  # Create a local copy of  database folder from SVN (svn scheckout)
+  # Edit local.settings (username, password and database connect string). Do not commit local.setting to svn.
+  # Run `nant db.install`
+
+{{{
+<!-- Oracle deployment environment -->
+<!-- Oracle database using easy connect syntx "server_name:port/service_name" -->
+<property name="db.user" value = "smdemo"/>
+<property name="db.password" value = "smdemo"/>	
+<property name="db.datasource" value = "localhost/orcl"/>
+}}}
+
+Alternative is to create separate settings for a different environment:
+  # Create qa.settings (username, password and database connect string) pointing to QA environment
+  # Run `nant db.install -D:db.env=qa`
+
+==Upgrading an existing schema==
+  # Update local copy of  database folder from SVN with svn update
+  # Run `nant db.upgrade`
+
+==Building from scratch to test for syntax errors in scripts==
+  # Update local copy of  database folder from SVN with svn update
+  # Run `nant db.build`
+
+*Db.build target is for development environment only as it drops all objects in build schema!* Build executes under separate build user defined in settings file. 
+
+{{{
+<!-- Oracle build environment -->
+<property name="db.build.user" value = "smdemo_build"/>
+<property name="db.build.password" value = "smdemo_build"/>
+<property name="db.build.datasource" value = "localhost/orcl"/>	
+}}}
