@@ -373,7 +373,7 @@ end;
 
 22. Run sqlmake plsql synchronization
 {{{
-C:\sqlmake-1.0.0.8\examples\playground>sqlmake /db -plsql userid=smdemo/smdemo@localhost:1521/orcl scri
+C:\sqlmake-1.0.0.8\examples\playground>sqlmake /db -plsql userid=smdemo/smdemo@localhost:1521/orcl scripts=.
 SQLMake, Copyright Mitja Golouh 2008, mitja.golouh@gmail.com
 Revision 8
 Loading settings from config in scripts folder .\sqlmake.config
