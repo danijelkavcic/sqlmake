@@ -5,6 +5,7 @@
  * [http://www.codinghorror.com/blog/archives/001050.html Get Your Database Under Version Control]
  * [http://odetocode.com/Blogs/scott/archive/2008/02/02/11737.aspx K. Scott Allen: Versioning Databases – Views, Stored Procedures, and the Like]
  * [http://stackoverflow.com/questions/115369/do-you-source-control-your-databases Do you source control your databases?]
+ * [http://blog.f12.no/wp/2009/01/24/the-new-guy-and-his-database/ The new guy and his database]
 
 = Alternative tools =
 
