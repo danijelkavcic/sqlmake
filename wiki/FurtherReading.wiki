@@ -10,3 +10,4 @@
 = Alternative tools =
 
   * [http://dbdeploy.com Dbdeploy]
+  * [http://www.tewari.info/dbupdater/ DbUpdater]
