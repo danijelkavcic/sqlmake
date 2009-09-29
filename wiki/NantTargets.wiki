@@ -1,5 +1,7 @@
 #summary Nant targets
 #labels Featured
+#sidebar TableOfContents
+
 = Using sqlmake with Nant =
 
 USING NANT TARGETS
