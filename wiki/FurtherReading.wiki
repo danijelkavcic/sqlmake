@@ -1,5 +1,7 @@
 #summary What other people are saying about database schema versioning and deployment
 #labels Featured
+#sidebar TableOfContents
+
 = Articles, blogs, forums and so on =
  
  * [http://www.codinghorror.com/blog/archives/001050.html Get Your Database Under Version Control]
