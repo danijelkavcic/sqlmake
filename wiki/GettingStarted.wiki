@@ -1,5 +1,7 @@
 #summary Tutorial to get started with sqlmake
 #labels Featured
+#sidebar TableOfContents
+
 = Hands on tutorial for sqlmake =
 
 == Is sqlmake for you? == 
