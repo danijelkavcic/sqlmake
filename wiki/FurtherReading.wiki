@@ -11,5 +11,15 @@
 
 = Alternative tools =
 
+== SQL script based deployment tools ==
+
   * [http://dbdeploy.com Dbdeploy]
   * [http://www.tewari.info/dbupdater/ DbUpdater]
+
+== XML based deployment tools ==
+  * [http://code.google.com/p/dbkeepernet/ DbKeeperNet]
+  * [http://migratedb.sourceforge.net/ MIGRATEdb]
+
+== Ruby on Rail's Migrations and followers == 
+  * [http://api.rubyonrails.org/classes/ActiveRecord/Migration.html Ruby on Rail's Migrations]
+  * [http://code.google.com/p/migratordotnet/ MigratorDotNet]
