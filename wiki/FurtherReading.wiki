@@ -15,11 +15,14 @@
 
   * [http://dbdeploy.com Dbdeploy]
   * [http://www.tewari.info/dbupdater/ DbUpdater]
+  * [http://uptodater.sourceforge.net/ UpToDater]
 
 == XML based deployment tools ==
   * [http://code.google.com/p/dbkeepernet/ DbKeeperNet]
   * [http://migratedb.sourceforge.net/ MIGRATEdb]
+  * [http://www.liquibase.org/ LiquiBase]
 
 == Coding database upgrades in programming language == 
   * [http://api.rubyonrails.org/classes/ActiveRecord/Migration.html Ruby on Rail's Migrations]
   * [http://code.google.com/p/migratordotnet/ MigratorDotNet]
+  * [http://www.hexsw.com/Products/Components/DataConstructor/Default.aspx DataConstructor]
