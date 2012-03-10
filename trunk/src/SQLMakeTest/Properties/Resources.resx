@@ -1,0 +1,1228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AlterCluster" xml:space="preserve">
+    <value>ALTER CLUSTER personnel
+   SIZE 1024 CACHE;</value>
+  </data>
+  <data name="AlterDatabase" xml:space="preserve">
+    <value>ALTER DATABASE 
+   DEFAULT TEMPORARY TABLESPACE test;</value>
+  </data>
+  <data name="AlterDatabaseLink" xml:space="preserve">
+    <value>ALTER DATABASE LINK test_link CONNECT TO scott IDENTIFIED BY tiger;</value>
+  </data>
+  <data name="AlterDimension" xml:space="preserve">
+    <value>ALTER DIMENSION customers_dim
+   DROP ATTRIBUTE country;</value>
+  </data>
+  <data name="AlterDiskgroup" xml:space="preserve">
+    <value>ALTER DISKGROUP dgroup_01
+  MOUNT;</value>
+  </data>
+  <data name="AlterFlashbackArchive" xml:space="preserve">
+    <value>ALTER FLASHBACK ARCHIVE test SET DEFAULT;</value>
+  </data>
+  <data name="AlterFunction" xml:space="preserve">
+    <value>ALTER FUNCTION scott.test_function COMPILE;</value>
+  </data>
+  <data name="AlterIndex" xml:space="preserve">
+    <value>ALTER INDEX oe.test_ix  
+    INITRANS 5;</value>
+  </data>
+  <data name="AlterIndextype" xml:space="preserve">
+    <value>ALTER INDEXTYPE test_indextype COMPILE;</value>
+  </data>
+  <data name="AlterJavaClass" xml:space="preserve">
+    <value>ALTER JAVA CLASS "Agent"
+   RESOLVER (("/usr/bin/bfile_dir/*" pm)(* public))
+   RESOLVE;</value>
+  </data>
+  <data name="AlterJavaSource" xml:space="preserve">
+    <value>ALTER java source SCOTT."Generated/TESTSTAPI" compile;</value>
+  </data>
+  <data name="AlterLibrary" xml:space="preserve">
+    <value>ALTER LIBRARY scott.test_ext_lib COMPILE;</value>
+  </data>
+  <data name="AlterMaterializedView" xml:space="preserve">
+    <value>ALTER MATERIALIZED VIEW sales_by_month_by_state CONSIDER FRESH;</value>
+  </data>
+  <data name="AlterMaterializedViewLog" xml:space="preserve">
+    <value>ALTER MATERIALIZED VIEW LOG ON order_items ADD ROWID;</value>
+  </data>
+  <data name="AlterOperator" xml:space="preserve">
+    <value>ALTER OPERATOR test_op COMPILE;</value>
+  </data>
+  <data name="AlterOutline" xml:space="preserve">
+    <value>ALTER OUTLINE bluberies REBUILD;</value>
+  </data>
+  <data name="AlterPackage" xml:space="preserve">
+    <value>ALTER PACKAGE test_package COMPILE PACKAGE;</value>
+  </data>
+  <data name="AlterPrivateOutline" xml:space="preserve">
+    <value>ALTER private OUTLINE bluberies REBUILD;</value>
+  </data>
+  <data name="AlterProcedure" xml:space="preserve">
+    <value>ALTER PROCEDURE scott.test_proc COMPILE;</value>
+  </data>
+  <data name="AlterProfile" xml:space="preserve">
+    <value>ALTER PROFILE test_profile 
+   LIMIT PASSWORD_REUSE_TIME 30 
+   PASSWORD_REUSE_MAX UNLIMITED;</value>
+  </data>
+  <data name="AlterPublicDatabaseLink" xml:space="preserve">
+    <value>ALTER PUBLIC DATABASE LINK test_link CONNECT TO scott IDENTIFIED BY tiger;</value>
+  </data>
+  <data name="AlterPublicOutline" xml:space="preserve">
+    <value>ALTER public OUTLINE bluberies REBUILD;</value>
+  </data>
+  <data name="AlterResourceCost" xml:space="preserve">
+    <value>ALTER RESOURCE COST 
+   CPU_PER_SESSION 100
+   CONNECT_TIME      1;</value>
+  </data>
+  <data name="AlterRole" xml:space="preserve">
+    <value>ALTER ROLE dw_manager IDENTIFIED USING scott.admin;</value>
+  </data>
+  <data name="AlterRollbackSegment" xml:space="preserve">
+    <value>ALTER ROLLBACK SEGMENT rbs_one ONLINE;</value>
+  </data>
+  <data name="AlterSequence" xml:space="preserve">
+    <value>ALTER SEQUENCE test_seq 
+   CYCLE
+   CACHE 5;</value>
+  </data>
+  <data name="AlterSession" xml:space="preserve">
+    <value>ALTER SESSION 
+   SET SQL_TRACE = TRUE;</value>
+  </data>
+  <data name="AlterSharedDatabaseLink" xml:space="preserve">
+    <value>ALTER shared DATABASE LINK test_link CONNECT TO scott IDENTIFIED BY tiger;</value>
+  </data>
+  <data name="AlterSharedPublicDatabaseLink" xml:space="preserve">
+    <value>ALTER shared public DATABASE LINK test_link CONNECT TO scott IDENTIFIED BY tiger;</value>
+  </data>
+  <data name="AlterSystem" xml:space="preserve">
+    <value>ALTER SYSTEM SWITCH LOGFILE;</value>
+  </data>
+  <data name="AlterTable" xml:space="preserve">
+    <value>ALTER TABLE students ADD UNIQUE (student_id);</value>
+  </data>
+  <data name="AlterTableAddConstraintCheck" xml:space="preserve">
+    <value>ALTER TABLE suppliers
+add CONSTRAINT check_supplier_name
+   CHECK (supplier_name IN ('IBM', 'Microsoft', 'NVIDIA'));</value>
+  </data>
+  <data name="AlterTableAddConstraintForeign" xml:space="preserve">
+    <value>ALTER TABLE students
+  ADD CONSTRAINT school_fk FOREIGN KEY (school_id) 
+  REFERENCES scholls (scholl_id);</value>
+  </data>
+  <data name="AlterTableAddConstraintPrimary" xml:space="preserve">
+    <value>alter table students
+add constraint students_pk primary key (ID);</value>
+  </data>
+  <data name="AlterTableAddConstraintUnique" xml:space="preserve">
+    <value>alter table students
+  add constraint student_uk
+  unique (student_id)</value>
+  </data>
+  <data name="AlterTableDropConstraint" xml:space="preserve">
+    <value>ALTER TABLE departments
+    DROP CONSTRAINT pk_dept CASCADE;</value>
+  </data>
+  <data name="AlterTableDropPrimaryKey" xml:space="preserve">
+    <value>ALTER TABLE departments 
+    DROP PRIMARY KEY CASCADE;</value>
+  </data>
+  <data name="AlterTableDropUnique" xml:space="preserve">
+    <value>ALTER TABLE employees 
+    DROP UNIQUE (email);</value>
+  </data>
+  <data name="AlterTableModifyConstraint" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AlterTableRenameConstraint" xml:space="preserve">
+    <value>ALTER TABLE customers RENAME CONSTRAINT cust_fname_nn
+   TO cust_firstname_nn;</value>
+  </data>
+  <data name="AlterTablespace" xml:space="preserve">
+    <value>ALTER TABLESPACE demo ONLINE;</value>
+  </data>
+  <data name="AlterTrigger" xml:space="preserve">
+    <value>ALTER TRIGGER journal_trg DISABLE;</value>
+  </data>
+  <data name="AlterType" xml:space="preserve">
+    <value>ALTER TYPE phone_list_typ
+  MODIFY ELEMENT TYPE VARCHAR(64) CASCADE;</value>
+  </data>
+  <data name="AlterUser" xml:space="preserve">
+    <value>ALTER USER app_user REVOKE CONNECT THROUGH core;</value>
+  </data>
+  <data name="AlterView" xml:space="preserve">
+    <value>ALTER VIEW demo_v
+    COMPILE;</value>
+  </data>
+  <data name="AnalyzeCluster" xml:space="preserve">
+    <value>ANALYZE CLUSTER test_cluster
+    VALIDATE STRUCTURE CASCADE;</value>
+  </data>
+  <data name="AnalyzeIndex" xml:space="preserve">
+    <value>ANALYZE INDEX test_i VALIDATE STRUCTURE;</value>
+  </data>
+  <data name="AnalyzeTable" xml:space="preserve">
+    <value>ANALYZE TABLE hr.orders DELETE STATISTICS;</value>
+  </data>
+  <data name="AssociateStatistics" xml:space="preserve">
+    <value>ASSOCIATE STATISTICS WITH PACKAGES special_functions, other_functions, last_functions DEFAULT SELECTIVITY 10;</value>
+  </data>
+  <data name="Audit" xml:space="preserve">
+    <value>AUDIT DELETE ANY TABLE;</value>
+  </data>
+  <data name="Call" xml:space="preserve">
+    <value>CALL emp_mgmt.remove_dept@dblink(100) INTO :x;</value>
+  </data>
+  <data name="CommentColumn" xml:space="preserve">
+    <value>COMMENT ON COLUMN hr.orders.name 
+   IS 'Test comment';</value>
+  </data>
+  <data name="CommentEdition" xml:space="preserve">
+    <value>comment on edition test_edition is 'Test comment';</value>
+  </data>
+  <data name="CommentIndextype" xml:space="preserve">
+    <value>comment on indextype test_indextype is 'Test comment';</value>
+  </data>
+  <data name="CommentMaterializedView" xml:space="preserve">
+    <value>comment on materialized view test_mv is 'Test comment';</value>
+  </data>
+  <data name="CommentMiningModel" xml:space="preserve">
+    <value>comment on mining model test_mining_model is 'Test comment';</value>
+  </data>
+  <data name="CommentOperator" xml:space="preserve">
+    <value>comment on operator test_operator is 'Test comment';</value>
+  </data>
+  <data name="CommentTable" xml:space="preserve">
+    <value>comment on table hr.orders is 'Test comment';</value>
+  </data>
+  <data name="Commit" xml:space="preserve">
+    <value>COMMIT FORCE '22.57.53';</value>
+  </data>
+  <data name="CreateBigfileTablespace" xml:space="preserve">
+    <value>CREATE BIGFILE TABLESPACE bigtbs_01
+  DATAFILE 'tbs_f1.dbf'
+  SIZE 20M AUTOEXTEND ON;</value>
+  </data>
+  <data name="CreateBitmapIndex" xml:space="preserve">
+    <value>CREATE BITMAP INDEX product_bm_ix
+   ON hash_products(list_price)
+   FROM hash_products h, sales_quota s
+   WHERE h.product_id = s.product_id
+   TABLESPACE example
+   LOCAL(PARTITION ix_p1 TABLESPACE example,
+         PARTITION ix_p2,
+         PARTITION ix_p3 TABLESPACE example,
+         PARTITION ix_p4,
+         PARTITION ix_p5 TABLESPACE example );</value>
+  </data>
+  <data name="CreateCluster" xml:space="preserve">
+    <value>CREATE CLUSTER personnel
+   (department NUMBER(4))
+SIZE 512 
+STORAGE (initial 100K next 50K);</value>
+  </data>
+  <data name="CreateContext" xml:space="preserve">
+    <value>CREATE OR REPLACE CONTEXT hr_context USING emp_mgmt;</value>
+  </data>
+  <data name="CreateControlFile" xml:space="preserve">
+    <value>CREATE CONTROLFILE SET DATABASE "TEST" RESETLOGS NOARCHIVELOG
+    MAXLOGFILES 32
+    MAXLOGMEMBERS 5
+    MAXDATAFILES 600
+    MAXINSTANCES 10
+    MAXLOGHISTORY 1000
+LOGFILE
+  GROUP 1 (
+    '/u03/app/oradata/TEST/redo_g01a.log',
+    '/u04/app/oradata/TEST/redo_g01b.log',
+    '/u05/app/oradata/TEST/redo_g01c.log'
+  ) SIZE 200K,
+  GROUP 2 (
+    '/u03/app/oradata/TEST/redo_g02a.log',
+    '/u04/app/oradata/TEST/redo_g02b.log',
+    '/u05/app/oradata/TEST/redo_g02c.log'
+  ) SIZE 200K,
+  GROUP 3 (
+    '/u03/app/oradata/TEST/redo_g03a.log',
+    '/u04/app/oradata/TEST/redo_g03b.log',
+    '/u05/app/oradata/TEST/redo_g03c.log'
+  ) SIZE 200K
+DATAFILE
+  '/u08/app/oradata/TEST/system01.dbf',
+  '/u06/app/oradata/TEST/rbs01.dbf',
+  '/u07/app/oradata/TEST/temp01.dbf',
+  '/u10/app/oradata/TEST/userd01.dbf',
+  '/u09/app/oradata/TEST/userx01.dbf'
+;</value>
+  </data>
+  <data name="CreateDatabase" xml:space="preserve">
+    <value>CREATE DATABASE sample
+   CONTROLFILE REUSE 
+   LOGFILE
+      GROUP 1 ('diskx:log1.log', 'disky:log1.log') SIZE 50K, 
+      GROUP 2 ('diskx:log2.log', 'disky:log2.log') SIZE 50K 
+   MAXLOGFILES 5 
+   MAXLOGHISTORY 100 
+   MAXDATAFILES 10 
+   MAXINSTANCES 2 
+   ARCHIVELOG 
+   CHARACTER SET AL32UTF8
+   NATIONAL CHARACTER SET AL16UTF16
+   DATAFILE  
+      'disk1:df1.dbf' AUTOEXTEND ON,
+      'disk2:df2.dbf' AUTOEXTEND ON NEXT 10M MAXSIZE UNLIMITED
+   DEFAULT TEMPORARY TABLESPACE temp_ts
+   UNDO TABLESPACE undo_ts 
+   SET TIME_ZONE = '+02:00';</value>
+  </data>
+  <data name="CreateDatabaseLink" xml:space="preserve">
+    <value>CREATE DATABASE LINK local 
+   CONNECT TO hr IDENTIFIED BY password
+   USING 'local';</value>
+  </data>
+  <data name="CreateDimension" xml:space="preserve">
+    <value>CREATE DIMENSION customers_dim 
+   LEVEL customer   IS (customers.cust_id)
+   LEVEL city       IS (customers.cust_city) 
+   LEVEL state      IS (customers.cust_state_province) 
+   LEVEL country    IS (countries.country_id) 
+   LEVEL subregion  IS (countries.country_subregion) 
+   LEVEL region     IS (countries.country_region) 
+   HIERARCHY geog_rollup (
+      customer      CHILD OF
+      city          CHILD OF 
+      state         CHILD OF 
+      country       CHILD OF 
+      subregion     CHILD OF 
+      region 
+   JOIN KEY (customers.country_id) REFERENCES country
+   )
+   ATTRIBUTE customer DETERMINES
+   (cust_first_name, cust_last_name, cust_gender, 
+    cust_marital_status, cust_year_of_birth, 
+    cust_income_level, cust_credit_limit) 
+   ATTRIBUTE country DETERMINES (countries.country_name)
+;</value>
+  </data>
+  <data name="CreateDirectory" xml:space="preserve">
+    <value>CREATE OR REPLACE DIRECTORY bfile_dir AS '/usr/bin/bfile_dir';</value>
+  </data>
+  <data name="CreateDiskgroup" xml:space="preserve">
+    <value>CREATE DISKGROUP dgroup_01
+  EXTERNAL REDUNDANCY
+  DISK '$ORACLE_HOME/disks/c*';</value>
+  </data>
+  <data name="CreateEdition" xml:space="preserve">
+    <value>CREATE EDITION test_ed;</value>
+  </data>
+  <data name="CreateEditioningView" xml:space="preserve">
+    <value>CREATE OR replace EDITIONING VIEW ed_orders_view (o_id, o_date, o_status)
+  AS SELECT order_id, order_date, order_status FROM orders
+  WITH READ ONLY;</value>
+  </data>
+  <data name="CreateFlashbackArchive" xml:space="preserve">
+    <value>CREATE FLASHBACK ARCHIVE DEFAULT test_archive1
+   TABLESPACE example
+   QUOTA 1 M
+   RETENTION 1 DAY;</value>
+  </data>
+  <data name="CreateForceView" xml:space="preserve">
+    <value>CREATE OR REPLACE FORCE VIEW emp_view AS 
+   SELECT last_name, salary*12 annual_salary
+   FROM employees 
+   WHERE department_id = 20;</value>
+  </data>
+  <data name="CreateFunction" xml:space="preserve">
+    <value>CREATE or replace FUNCTION get_bal(acc_no IN NUMBER) 
+   RETURN NUMBER 
+   IS acc_bal NUMBER(11,2);
+   BEGIN 
+      SELECT order_total 
+      INTO acc_bal 
+      FROM orders 
+      WHERE customer_id = acc_no; 
+      RETURN(acc_bal); 
+    END;
+/</value>
+  </data>
+  <data name="CreateGlobalTemporaryTable" xml:space="preserve">
+    <value>CREATE GLOBAL TEMPORARY TABLE today_sales
+   ON COMMIT PRESERVE ROWS 
+   AS SELECT * FROM orders WHERE order_date = SYSDATE;</value>
+  </data>
+  <data name="CreateIndex" xml:space="preserve">
+    <value>CREATE INDEX ord_customer_ix
+   ON orders (customer_id);</value>
+  </data>
+  <data name="CreateIndextype" xml:space="preserve">
+    <value>CREATE OR replace INDEXTYPE position_indextype
+   FOR position_between(NUMBER, NUMBER, NUMBER)
+   USING position_im;</value>
+  </data>
+  <data name="CreateJava" xml:space="preserve">
+    <value>CREATE OR REPLACE AND RESOLVE NOFORCE JAVA CLASS USING BFILE (java_dir, 'Agent.class')
+/</value>
+  </data>
+  <data name="CreateLibrary" xml:space="preserve">
+    <value>CREATE OR REPLACE LIBRARY ext_lib IS '/OR/newlib/ext_lib.so';
+/</value>
+  </data>
+  <data name="CreateMaterializedView" xml:space="preserve">
+    <value>CREATE MATERIALIZED VIEW foreign_customers FOR UPDATE
+   AS SELECT * FROM sh.customers@remote cu
+   WHERE EXISTS
+     (SELECT * FROM sh.countries@remote co
+      WHERE co.country_id = cu.country_id);</value>
+  </data>
+  <data name="CreateMaterializedViewLog" xml:space="preserve">
+    <value>CREATE MATERIALIZED VIEW LOG ON product_information 
+   WITH ROWID, SEQUENCE (list_price, min_price, category_id), PRIMARY KEY
+   INCLUDING NEW VALUES;</value>
+  </data>
+  <data name="CreateNoForceView" xml:space="preserve">
+    <value>CREATE OR REPLACE NO FORCE VIEW emp_view AS 
+   SELECT last_name, salary*12 annual_salary
+   FROM employees 
+   WHERE department_id = 20;</value>
+  </data>
+  <data name="CreateOperator" xml:space="preserve">
+    <value>CREATE OR REPLACE OPERATOR eq_op
+   BINDING (VARCHAR2, VARCHAR2) 
+   RETURN NUMBER 
+   USING eq_f;</value>
+  </data>
+  <data name="CreateOutline" xml:space="preserve">
+    <value>CREATE OR REPLACE OUTLINE salaries FOR CATEGORY special
+   ON SELECT last_name, salary FROM employees;</value>
+  </data>
+  <data name="CreatePackage" xml:space="preserve">
+    <value>CREATE OR REPLACE PACKAGE emp_mgmt AS 
+   FUNCTION hire (last_name VARCHAR2, job_id VARCHAR2, 
+      manager_id NUMBER, salary NUMBER, 
+      commission_pct NUMBER, department_id NUMBER) 
+      RETURN NUMBER; 
+   FUNCTION create_dept(department_id NUMBER, location_id NUMBER) 
+      RETURN NUMBER; 
+   PROCEDURE remove_emp(employee_id NUMBER); 
+   PROCEDURE remove_dept(department_id NUMBER); 
+   PROCEDURE increase_sal(employee_id NUMBER, salary_incr NUMBER); 
+   PROCEDURE increase_comm(employee_id NUMBER, comm_incr NUMBER); 
+   no_comm EXCEPTION; 
+   no_sal EXCEPTION; 
+END emp_mgmt; 
+/</value>
+  </data>
+  <data name="CreatePackageBody" xml:space="preserve">
+    <value>CREATE OR REPLACE PACKAGE BODY emp_mgmt AS 
+   tot_emps NUMBER; 
+   tot_depts NUMBER; 
+FUNCTION hire 
+   (last_name VARCHAR2, job_id VARCHAR2, 
+    manager_id NUMBER, salary NUMBER, 
+    commission_pct NUMBER, department_id NUMBER) 
+   RETURN NUMBER IS new_empno NUMBER; 
+BEGIN 
+   SELECT employees_seq.NEXTVAL 
+      INTO new_empno 
+      FROM DUAL; 
+   INSERT INTO employees 
+      VALUES (new_empno, 'First', 'Last','first.example@oracle.com', 
+              '(415)555-0100','18-JUN-02','IT_PROG',90000000,00, 
+              100,110); 
+      tot_emps := tot_emps + 1; 
+   RETURN(new_empno); 
+END; 
+FUNCTION create_dept(department_id NUMBER, location_id NUMBER) 
+   RETURN NUMBER IS 
+      new_deptno NUMBER; 
+   BEGIN 
+      SELECT departments_seq.NEXTVAL 
+         INTO new_deptno 
+         FROM dual; 
+      INSERT INTO departments 
+         VALUES (new_deptno, 'department name', 100, 1700); 
+      tot_depts := tot_depts + 1; 
+      RETURN(new_deptno); 
+   END; 
+PROCEDURE remove_emp (employee_id NUMBER) IS 
+   BEGIN 
+      DELETE FROM employees 
+      WHERE employees.employee_id = remove_emp.employee_id; 
+      tot_emps := tot_emps - 1; 
+   END; 
+PROCEDURE remove_dept(department_id NUMBER) IS 
+   BEGIN 
+      DELETE FROM departments 
+      WHERE departments.department_id = remove_dept.department_id; 
+      tot_depts := tot_depts - 1; 
+      SELECT COUNT(*) INTO tot_emps FROM employees; 
+   END; 
+PROCEDURE increase_sal(employee_id NUMBER, salary_incr NUMBER) IS 
+   curr_sal NUMBER; 
+   BEGIN 
+      SELECT salary INTO curr_sal FROM employees 
+      WHERE employees.employee_id = increase_sal.employee_id; 
+      IF curr_sal IS NULL 
+         THEN RAISE no_sal; 
+      ELSE 
+         UPDATE employees 
+         SET salary = salary + salary_incr 
+         WHERE employee_id = employee_id; 
+      END IF; 
+   END; 
+PROCEDURE increase_comm(employee_id NUMBER, comm_incr NUMBER) IS 
+   curr_comm NUMBER; 
+   BEGIN 
+      SELECT commission_pct 
+      INTO curr_comm 
+      FROM employees 
+      WHERE employees.employee_id = increase_comm.employee_id; 
+      IF curr_comm IS NULL 
+         THEN RAISE no_comm; 
+      ELSE 
+         UPDATE employees 
+         SET commission_pct = commission_pct + comm_incr; 
+      END IF; 
+   END; 
+END emp_mgmt; 
+/</value>
+  </data>
+  <data name="CreatePfile" xml:space="preserve">
+    <value>CREATE PFILE = 'my_init.ora' FROM SPFILE = 's_params.ora';</value>
+  </data>
+  <data name="CreatePrivateOutline" xml:space="preserve">
+    <value>CREATE OR REPLACE PRIVATE OUTLINE salaries FOR CATEGORY special
+   ON SELECT last_name, salary FROM employees;</value>
+  </data>
+  <data name="CreateProcedure" xml:space="preserve">
+    <value>CREATE OR REPLACE PROCEDURE remove_emp (employee_id NUMBER) AS
+   tot_emps NUMBER;
+   BEGIN
+      DELETE FROM employees
+      WHERE employees.employee_id = remove_emp.employee_id;
+   tot_emps := tot_emps - 1;
+   END;
+/</value>
+  </data>
+  <data name="CreateProfile" xml:space="preserve">
+    <value>CREATE PROFILE new_profile
+  LIMIT PASSWORD_REUSE_MAX 10
+        PASSWORD_REUSE_TIME 30;</value>
+  </data>
+  <data name="CreatePublicDatabaseLink" xml:space="preserve">
+    <value>CREATE PUBLIC DATABASE LINK remote 
+   USING 'remote';</value>
+  </data>
+  <data name="CreatePublicOutline" xml:space="preserve">
+    <value>CREATE OR REPLACE PUBLIC OUTLINE salaries FOR CATEGORY special
+   ON SELECT last_name, salary FROM employees;</value>
+  </data>
+  <data name="CreatePublicRollbackSegment" xml:space="preserve">
+    <value>CREATE PUBLIC ROLLBACK SEGMENT rbs_one
+   TABLESPACE rbs_ts;</value>
+  </data>
+  <data name="CreatePublicSynonym" xml:space="preserve">
+    <value>CREATE PUBLIC SYNONYM offices 
+   FOR hr.locations;</value>
+  </data>
+  <data name="CreateRestorePoint" xml:space="preserve">
+    <value>CREATE RESTORE POINT good_data;</value>
+  </data>
+  <data name="CreateRole" xml:space="preserve">
+    <value>CREATE ROLE dw_manager;</value>
+  </data>
+  <data name="CreateRollbackSegment" xml:space="preserve">
+    <value>CREATE ROLLBACK SEGMENT rbs_one
+   TABLESPACE rbs_ts;</value>
+  </data>
+  <data name="CreateSchema" xml:space="preserve">
+    <value>CREATE SCHEMA AUTHORIZATION oe
+   CREATE TABLE new_product 
+      (color VARCHAR2(10)  PRIMARY KEY, quantity NUMBER) 
+   CREATE VIEW new_product_view 
+      AS SELECT color, quantity FROM new_product WHERE color = 'RED' 
+   GRANT select ON new_product_view TO hr;</value>
+  </data>
+  <data name="CreateSequence" xml:space="preserve">
+    <value>CREATE SEQUENCE customers_seq
+ START WITH     1000
+ INCREMENT BY   1
+ NOCACHE
+ NOCYCLE;</value>
+  </data>
+  <data name="CreateSharedDatabaseLink" xml:space="preserve">
+    <value>CREATE SHARED DATABASE LINK remote 
+   USING 'remote';</value>
+  </data>
+  <data name="CreateSharedPublicDatabaseLink" xml:space="preserve">
+    <value>CREATE SHARED PUBLIC DATABASE LINK remote 
+   USING 'remote';</value>
+  </data>
+  <data name="CreateSmallfileTablespace" xml:space="preserve">
+    <value>CREATE SMALLFILE TABLESPACE tbs_01
+  DATAFILE 'tbs_f1.dbf'
+  SIZE 20M AUTOEXTEND ON;</value>
+  </data>
+  <data name="CreateSpfile" xml:space="preserve">
+    <value>CREATE SPFILE 
+   FROM PFILE = '$ORACLE_HOME/work/t_init1.ora';</value>
+  </data>
+  <data name="CreateSynonym" xml:space="preserve">
+    <value>CREATE OR REPLACE SYNONYM offices 
+   FOR hr.locations;</value>
+  </data>
+  <data name="CreateTable" xml:space="preserve">
+    <value>CREATE TABLE employees_demo
+    ( employee_id    NUMBER(6)
+    , first_name     VARCHAR2(20)
+    , last_name      VARCHAR2(25) 
+         CONSTRAINT emp_last_name_nn_demo NOT NULL
+    , email          VARCHAR2(25) 
+         CONSTRAINT emp_email_nn_demo     NOT NULL
+    , phone_number   VARCHAR2(20)
+    , hire_date      DATE  DEFAULT SYSDATE 
+         CONSTRAINT emp_hire_date_nn_demo  NOT NULL
+    , job_id         VARCHAR2(10)
+       CONSTRAINT     emp_job_nn_demo  NOT NULL
+    , salary         NUMBER(8,2)
+       CONSTRAINT     emp_salary_nn_demo  NOT NULL
+    , commission_pct NUMBER(2,2)
+    , manager_id     NUMBER(6)
+    , department_id  NUMBER(4)
+    , dn             VARCHAR2(300)
+    , CONSTRAINT     emp_salary_min_demo
+                     CHECK (salary &gt; 0) 
+    , CONSTRAINT     emp_email_uk_demo
+                     UNIQUE (email)
+    ) ;</value>
+  </data>
+  <data name="CreateTablespace" xml:space="preserve">
+    <value>CREATE TABLESPACE normal_01
+  DATAFILE 'normal.dbf'
+  SIZE 20M AUTOEXTEND ON;</value>
+  </data>
+  <data name="CreateTemporaryTablespace" xml:space="preserve">
+    <value>CREATE TEMPORARY TABLESPACE temp_demo
+   TEMPFILE 'temp01.dbf' SIZE 5M AUTOEXTEND ON;</value>
+  </data>
+  <data name="CreateTrigger" xml:space="preserve">
+    <value>CREATE OR REPLACE TRIGGER t
+  BEFORE
+    INSERT OR
+    UPDATE OF salary OR
+    UPDATE OF department_id OR
+    DELETE
+  ON employees
+BEGIN
+  CASE
+    WHEN INSERTING THEN
+      DBMS_OUTPUT.PUT_LINE('Inserting');
+    WHEN UPDATING('salary') THEN
+      DBMS_OUTPUT.PUT_LINE('Updating salary');
+    WHEN UPDATING('department_id') THEN
+      DBMS_OUTPUT.PUT_LINE('Updating department ID');
+    WHEN DELETING THEN
+      DBMS_OUTPUT.PUT_LINE('Deleting');
+  END CASE;
+END;
+/</value>
+  </data>
+  <data name="CreateType" xml:space="preserve">
+    <value>create type test as object (a NUMBER(1));</value>
+  </data>
+  <data name="CreateTypeBody" xml:space="preserve">
+    <value>create or replace type body test is
+
+constructor function test
+return self as result
+is
+begin
+  a := 'Hello world';
+  return;
+end;
+
+end;
+/</value>
+  </data>
+  <data name="CreateUndoTablespace" xml:space="preserve">
+    <value>CREATE UNDO TABLESPACE undots1
+   DATAFILE 'undotbs_1a.dbf'
+   SIZE 10M AUTOEXTEND ON
+   RETENTION GUARANTEE;</value>
+  </data>
+  <data name="CreateUniqueIndex" xml:space="preserve">
+    <value>CREATE UNIQUE INDEX promo_ix ON orders
+   (CASE WHEN promotion_id =2 THEN customer_id ELSE NULL END,
+    CASE WHEN promotion_id = 2 THEN promotion_id ELSE NULL END);</value>
+  </data>
+  <data name="CreateView" xml:space="preserve">
+    <value>CREATE OR REPLACE VIEW emp_view AS 
+   SELECT last_name, salary*12 annual_salary
+   FROM employees 
+   WHERE department_id = 20;</value>
+  </data>
+  <data name="DeleteSimple" xml:space="preserve">
+    <value>delete from oe.order where order_id = 1;</value>
+  </data>
+  <data name="DeleteSubquery" xml:space="preserve">
+    <value>DELETE FROM (SELECT * FROM employees)
+WHERE job_id = 'SA_REP'
+AND commission_pct &lt; .2;</value>
+  </data>
+  <data name="DeleteTableCollection" xml:space="preserve">
+    <value>DELETE TABLE (
+SELECT person_phones
+FROM person
+WHERE person_id = 1) p
+WHERE p.p_number = '206-987-6543';</value>
+  </data>
+  <data name="DisassociateStatistics" xml:space="preserve">
+    <value>DISASSOCIATE STATISTICS FROM PACKAGES  special_functions, other_functions, last_functions;</value>
+  </data>
+  <data name="DropCluster" xml:space="preserve">
+    <value>DROP CLUSTER personnel
+   INCLUDING TABLES
+   CASCADE CONSTRAINTS;</value>
+  </data>
+  <data name="DropContext" xml:space="preserve">
+    <value>DROP CONTEXT hr_context;</value>
+  </data>
+  <data name="DropDatabase" xml:space="preserve">
+    <value>drop database;</value>
+  </data>
+  <data name="DropDatabaseLink" xml:space="preserve">
+    <value>DROP DATABASE LINK remote;</value>
+  </data>
+  <data name="DropDimension" xml:space="preserve">
+    <value>DROP DIMENSION customers_dim;</value>
+  </data>
+  <data name="DropDirectory" xml:space="preserve">
+    <value>DROP DIRECTORY bfile_dir;</value>
+  </data>
+  <data name="DropDiskgroup" xml:space="preserve">
+    <value>DROP DISKGROUP dgroup_01 INCLUDING CONTENTS;</value>
+  </data>
+  <data name="DropEdition" xml:space="preserve">
+    <value>drop edition test cascade;</value>
+  </data>
+  <data name="DropFlashbackArchive" xml:space="preserve">
+    <value>drop flashback archive test;</value>
+  </data>
+  <data name="DropFunction" xml:space="preserve">
+    <value>DROP FUNCTION oe.SecondMax;</value>
+  </data>
+  <data name="DropIndex" xml:space="preserve">
+    <value>DROP INDEX ord_customer_ix_demo;</value>
+  </data>
+  <data name="DropIndextype" xml:space="preserve">
+    <value>DROP INDEXTYPE position_indextype FORCE;</value>
+  </data>
+  <data name="DropJavaClass" xml:space="preserve">
+    <value>DROP JAVA CLASS "Agent";</value>
+  </data>
+  <data name="DropJavaResource" xml:space="preserve">
+    <value>DROP JAVA RESOURCE "Agent";</value>
+  </data>
+  <data name="DropJavaSource" xml:space="preserve">
+    <value>DROP JAVA SOURCE "Agent";</value>
+  </data>
+  <data name="DropLibrary" xml:space="preserve">
+    <value>DROP LIBRARY ext_lib;</value>
+  </data>
+  <data name="DropMaterializedView" xml:space="preserve">
+    <value>DROP MATERIALIZED VIEW emp_data;</value>
+  </data>
+  <data name="DropMaterializedViewLog" xml:space="preserve">
+    <value>DROP MATERIALIZED VIEW LOG ON OE.customers;</value>
+  </data>
+  <data name="DropOperator" xml:space="preserve">
+    <value>DROP OPERATOR eq_op;</value>
+  </data>
+  <data name="DropOutline" xml:space="preserve">
+    <value>DROP OUTLINE salaries;</value>
+  </data>
+  <data name="DropPackage" xml:space="preserve">
+    <value>DROP PACKAGE emp_mgmt;</value>
+  </data>
+  <data name="DropPackageBody" xml:space="preserve">
+    <value>DROP PACKAGE BODY emp_mgmt;</value>
+  </data>
+  <data name="DropProcedure" xml:space="preserve">
+    <value>DROP PROCEDURE hr.remove_emp;</value>
+  </data>
+  <data name="DropProfile" xml:space="preserve">
+    <value>DROP PROFILE app_user CASCADE;</value>
+  </data>
+  <data name="DropPublicDatabaseLink" xml:space="preserve">
+    <value>DROP PUBLIC DATABASE LINK remote;</value>
+  </data>
+  <data name="DropPublicSynonym" xml:space="preserve">
+    <value>DROP PUBLIC SYNONYM customers;</value>
+  </data>
+  <data name="DropRestorePoint" xml:space="preserve">
+    <value>DROP RESTORE POINT good_data;</value>
+  </data>
+  <data name="DropRole" xml:space="preserve">
+    <value>DROP ROLE dw_manager;</value>
+  </data>
+  <data name="DropRollbackSegment" xml:space="preserve">
+    <value>DROP ROLLBACK SEGMENT rbs_one;</value>
+  </data>
+  <data name="DropSequence" xml:space="preserve">
+    <value>DROP SEQUENCE oe.customers_seq;</value>
+  </data>
+  <data name="DropSynonym" xml:space="preserve">
+    <value>DROP SYNONYM customers;</value>
+  </data>
+  <data name="DropTable" xml:space="preserve">
+    <value>DROP TABLE list_customers PURGE;</value>
+  </data>
+  <data name="DropTablespace" xml:space="preserve">
+    <value>DROP TABLESPACE tbs_01 
+    INCLUDING CONTENTS 
+        CASCADE CONSTRAINTS;</value>
+  </data>
+  <data name="DropTrigger" xml:space="preserve">
+    <value>DROP TRIGGER hr.salary_check;</value>
+  </data>
+  <data name="DropType" xml:space="preserve">
+    <value>DROP TYPE person_t FORCE;</value>
+  </data>
+  <data name="DropTypeBody" xml:space="preserve">
+    <value>DROP TYPE BODY data_typ1;</value>
+  </data>
+  <data name="DropUser" xml:space="preserve">
+    <value>DROP USER bezel CASCADE;</value>
+  </data>
+  <data name="DropView" xml:space="preserve">
+    <value>DROP VIEW emp_view;</value>
+  </data>
+  <data name="ExplainPlan" xml:space="preserve">
+    <value>EXPLAIN PLAN FOR
+   SELECT * FROM dual;</value>
+  </data>
+  <data name="FlashbackDatabase" xml:space="preserve">
+    <value>FLASHBACK STANDBY DATABASE TO TIMESTAMP SYSDATE-1;</value>
+  </data>
+  <data name="FlashbackTable" xml:space="preserve">
+    <value>FLASHBACK TABLE test
+  TO TIMESTAMP (SYSTIMESTAMP - INTERVAL '1' minute);</value>
+  </data>
+  <data name="Grant1" xml:space="preserve">
+    <value>GRANT SELECT, update
+   ON emp_view TO PUBLIC, scott;</value>
+  </data>
+  <data name="Grant2" xml:space="preserve">
+    <value>GRANT
+     CREATE ANY MATERIALIZED VIEW
+   , ALTER ANY MATERIALIZED VIEW
+   , DROP ANY MATERIALIZED VIEW
+   , QUERY REWRITE
+   , GLOBAL QUERY REWRITE
+   TO dw_manager,dw_USER
+   WITH ADMIN OPTION;</value>
+  </data>
+  <data name="InsertMultitable" xml:space="preserve">
+    <value>INSERT ALL
+WHEN order_total &lt; 1000000 THEN
+INTO small_orders
+WHEN order_total &gt; 1000000 AND order_total &lt; 2000000 THEN
+INTO medium_orders
+WHEN order_total &gt; 2000000 THEN
+INTO large_orders
+SELECT order_id, order_total, sales_rep_id, customer_id
+FROM orders;</value>
+  </data>
+  <data name="InsertSimple" xml:space="preserve">
+    <value>INSERT INTO departments
+VALUES (departments_seq.nextval, 'Entertainment', 162, 1400);</value>
+  </data>
+  <data name="InsertSubquery" xml:space="preserve">
+    <value>INSERT INTO(SELECT EMP_ID,ENAME FROM EMP WHERE EMP_ID=1)VALUES(2,'ABC');</value>
+  </data>
+  <data name="InsertTableCollection" xml:space="preserve">
+    <value>INSERT INTO TABLE(
+SELECT person_phones
+FROM person
+WHERE person_id = 1)
+VALUES
+('H','206-987-6543');</value>
+  </data>
+  <data name="LockTable" xml:space="preserve">
+    <value>LOCK TABLE a@remote, b 
+   IN SHARE MODE;</value>
+  </data>
+  <data name="Merge" xml:space="preserve">
+    <value>MERGE INTO bonuses D
+   USING (SELECT employee_id, salary, department_id FROM employees
+   WHERE department_id = 80) S
+   ON (D.employee_id = S.employee_id)
+   WHEN MATCHED THEN UPDATE SET D.bonus = D.bonus + S.salary*.01
+     DELETE WHERE (S.salary &gt; 8000)
+   WHEN NOT MATCHED THEN INSERT (D.employee_id, D.bonus)
+     VALUES (S.employee_id, S.salary*.01)
+     WHERE (S.salary &lt;= 8000);</value>
+  </data>
+  <data name="Noaudit" xml:space="preserve">
+    <value>NOAUDIT ROLE;</value>
+  </data>
+  <data name="Purge" xml:space="preserve">
+    <value>PURGE TABLE test;</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>RENAME old_name TO new_name;</value>
+  </data>
+  <data name="Revoke1" xml:space="preserve">
+    <value>REVOKE SELECT, INSERT 
+    ON hr.table1 FROM usera, userc;</value>
+  </data>
+  <data name="Revoke2" xml:space="preserve">
+    <value>REVOKE ALL 
+   ON orders FROM hr;</value>
+  </data>
+  <data name="Revoke3" xml:space="preserve">
+    <value>REVOKE CREATE TABLESPACE, CREATE TABLE 
+   FROM dw_manager, dw_user;</value>
+  </data>
+  <data name="Revoke4" xml:space="preserve">
+    <value>REVOKE ALL on java source "/2a6f1ff1_LOBCOMPRESSOR" from dw_manager;</value>
+  </data>
+  <data name="Rollback" xml:space="preserve">
+    <value>ROLLBACK TO SAVEPOINT test_sal;</value>
+  </data>
+  <data name="Savepoint" xml:space="preserve">
+    <value>SAVEPOINT test_sal;</value>
+  </data>
+  <data name="Select1" xml:space="preserve">
+    <value>select * from dual;</value>
+  </data>
+  <data name="Select2" xml:space="preserve">
+    <value>with a as (select *from dual) select * from a;</value>
+  </data>
+  <data name="SetConstraints" xml:space="preserve">
+    <value>SET CONSTRAINTS ALL IMMEDIATE;</value>
+  </data>
+  <data name="SqlPlusAt" xml:space="preserve">
+    <value>@\home\oracle\start.sql</value>
+  </data>
+  <data name="SqlPlusDoc" xml:space="preserve">
+    <value>DOC
+# This is a multiline
+# comment
+# from obsolete
+# sql*plus syntax</value>
+  </data>
+  <data name="SqlPlusDoubleAt" xml:space="preserve">
+    <value>@@\home\oracle\start.sql</value>
+  </data>
+  <data name="SqlPlusStart" xml:space="preserve">
+    <value>start \home\oracle\start.sql</value>
+  </data>
+  <data name="TruncateCluster" xml:space="preserve">
+    <value>TRUNCATE CLUSTER test_cluster REUSE STORAGE;</value>
+  </data>
+  <data name="TruncateTable" xml:space="preserve">
+    <value>TRUNCATE TABLE test_table PRESERVE MATERIALIZED VIEW LOG;</value>
+  </data>
+  <data name="UpdateSimple" xml:space="preserve">
+    <value>UPDATE sh.employees@remote
+SET salary = salary*1.1
+WHERE last_name = 'Baer';</value>
+  </data>
+  <data name="UpdateSubquery" xml:space="preserve">
+    <value>update (select empname from emp) set empname = 'Test';</value>
+  </data>
+  <data name="UpdateTableCollection" xml:space="preserve">
+    <value>UPDATE TABLE(SELECT h.people FROM hr_info h
+WHERE h.department_id = 280) p
+SET p.salary = p.salary + 100;</value>
+  </data>
+  <data name="WrappedFunction" xml:space="preserve">
+    <value>CREATE OR REPLACE FUNCTION zblj wrapped
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+189 158
+n/Zn2ExJiibNunotqpUJC744Vmgwg3nIrgw2f3SVALuwhVJvbwhys17J7FX0oFjs3x0SxayA
+H282ryAgn1Tp6sfe/Rm7Qyq6t2ubFKXAESC7BzPPerw/Z8ThWl4OtDa2r+otVsZfe19Nv/3q
+OP9SmuErftbeWNK6dgnVx3syZApRiVD4DT220uOC30d0uN7XCd6AnjdhES0V19QT3DZeU02C
+qKeSLN3Ncyey8j3Dejdb3Samo6StqXLq8YPYyEXBLzvDgLU/a5qE6n36WjkndjzR/00EjJZG
+NvhakJ3Vlm34HywtX516cO1TuOiF5vvYS4r/va1DBwquV5g4Mw==
+
+/</value>
+  </data>
+  <data name="WrappedLibrary" xml:space="preserve">
+    <value>CREATE LIBRARY zblj wrapped 
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+16
+24 59
+H/p7Czkf47nbLdCyJQeHa0u/qQ4wg04I9Z7AdBjDuAiBTjJt/gj1Cee9nrLLUjLMuHQr58tS
+dAj1yaammCS9lQ==
+
+/</value>
+  </data>
+  <data name="WrappedPackage" xml:space="preserve">
+    <value>CREATE OR REPLACE PACKAGE zblj wrapped
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+9
+494 1de
+dS33nu1mpUpGxZcI0TjVzYgYyUQwgz1eDPbhfy+5MQ9/gAIcooMMnBzC+k2vNIVqg+tns7pj
+AoeSThOieeo75jVGQGwvmwDJvJBX1Bd+rEvPk6pQwC4exEP8jStPu90JbvL7ekLQGwmefTcC
+HKbSm9S9H0rm0iVZWgNEPiE6nlMqqGW2rxRVydRq72iyB2rouOYnhgOEUCsOZmohCQDZpseL
+Ook6zKr1JBF7UEr686B9y+W47dPs5bg9XGXb4UrYXOefz30x9VQxC/ZS23tLcthH2U9Op4xa
+HKilPidgbj4BXoogSsrHb5h7IAyRSadOfX4IRzCw4aG2Uqz5dkTAN1EBqmtHs1ve14dcKkPr
+9uuLV4gcmccFYyELugaSJHlB1P3PUSuTItbkmkVvHaUEt3iaqzLby+H3Mpet+aIJYPaaq/8N
+v2s27p7zFell5AIZhO9noHtQuc2nFBMTlm3YpkM=
+
+/</value>
+  </data>
+  <data name="WrappedPackageBody" xml:space="preserve">
+    <value>CREATE OR REPLACE PACKAGE BODY zblj wrapped
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+12de 6c3
+c1af8IRn0WbL05nvA5u2Unfr27Iwg+1UBUiG3y/NA52sfW3Y4njjkCJWBuimbPCknzKZoWz/
+t8h5cfVtFLrbvWFE0gikh/WcIFWgonT6XbjJMIt28dzyc9D1vdsMrLrAtSlSt5oki2SWTyzn
+tozzqIEPA/Pxm9sHyoZn4RslyBmL91RKCLcMVKEV4MAuvqqhOkcNQee9k3RC53+oHG0+ndeT
+Vji9bm4PyCiwx3m3G6x1PMRYq7fnfJdveLTtiZxcHOLs7q/xlSOL12yZNQfOKVGfthuhe2V/
+HZbTQvH6IbdJzvpc1Av3Quabl8GirXVwFeLaxOuJgHTiHLvljWd2EbHHDTCBY/uOo19FOwLe
+b2OXSl/WFh9LX8qnojerF/dbz+CGn7pEJKjXnn6CnFascVqrY4NoDPEvEVnhVFBWiaKbdMMI
+hbw8FTDD7uMmF/ECRXp66O70h5Qz8twQBNo10hk+ng+FNIeRC+1IzF+FN9etgK4yN8tB6u8O
+9iYKkWtP0DnFoIXgD8IUG5lvW0IbqcH0/pnOwG69QcYhrIS4eLJJMxfI7V5deZ55Qu6Oy2WG
+MkTMuJfkng03RztZxiRBQaP/wC/Nayifj+xAe4mo7OAybgI4umBjD3b13x4HgWSWkfI/Evmb
+WrkPuxzj65ZuToH+gU7s2LWSNEIxX81uLEdumAcH5NmwJEsXhF8xyB0L9yRVAOKW/7BduSlB
+tOKcnbXb4lgpkpKgP7xXJMekCq+UzliiNFHn4WAIO0ekoVh9lcmsldnlBLeehr0+DCdxLQLf
+tVhu00K9LS5Q4WQa4O9A4YMLmRhMgafdb+ze1SwJ1xQAuNYcoaw/vgSlSHovDFDRgYuYMCdZ
+wFR/qJXOVJek+nj1VRs9jjo8kfSGFg52sDWnO5S7d6rIe2QTgU4/uYpw8YZUUY/FMvxg4d9z
+WNcctrmbLi7DYQGTvy6f/ehsc3voTJNhQAzeOeqBxV96BcLbUnSF4DJUPc+fvL9oGK8RrMZN
+6HUICy0nFoNvLRbyH+k4rz4YVi6vzivYuBJfLMBecsz/aO0ZX6Jav4wtZOk4r988B+No4KM4
+aeBfWxODg+wjBdFoI/C6Ag/eugXk/TecOzR8oNvammvA7f1a/AJpxUzOnC+zYf+Yl5prkVT3
+wgrXf3bd4NLcJLb/RmeXKcNuGOt74diXtmGczc/ZwqPVI5iKBRIGNT4s8c0q1hO1PpOUJ/bi
+8HqL2rt1eqE4AZ440yLSVFqCvEZMeNQJNDt5fqPNwIwZEMwx5dcJQ5HdK/2+vOkJN/X3SQbF
+oJHr+OPcUxmxWWCyOJMHzhaexnTa1ntVwhB1UiT0ZhvXRLwlTg6J2QzxvDXfqZC7lQ+NCiiq
+mZWGqMPc0GelJJU1Q+BwTbFICWYLJDWYGLWE/gFf6k+/hDk+QyHsKwRcccNYfg1PpN6q335k
+CsM8+95NsYY8EQR5pzAWPJPaE6AArKuC2ztXs+lqnHZXrs69sFmpktGoZUwLNpXkh73pQ3kz
+Yhkbb9RBsQPEpSdPAyXazxP9+HrHE93lsDiN7qMNYhJZSj2VVWXnqu+qoLtIF4AcKhiTSnyh
+hmfXsbZMNADuaqJOdYolgwvmxuaoSVh2nq0nthvckVgOsmlr2OQOQT2GkL2Dh1bU/Af+0Jmd
+JNL47lA/JNIGLuYFbHW5b0xWYfD3K2DyuiPr3uTBOPlVJD2mcUs=
+
+/</value>
+  </data>
+  <data name="WrappedType" xml:space="preserve">
+    <value>create type schema_name.type_name 
+ TIMESTAMP '2010-01-01:12:13:14'
+ OID '8A3DAA85AABDAAE2E034080020EDC61B' wrapped 
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+d
+9c a2
+xByvrbM+14dgykYpNRIWwI7LR5owg5n0dLhcFnJc+vqu/0pyRwzZ0JYmVlpDCbh0K6W/m8Ay
+y7OPCanWL4BJLLEwtbgkscoCfMbKFyjGyu+yth0upHQqP0q84p5XPTCSvjpqtLgqQDk57HFn
+ppSxoMmmps7fZnE=
+
+/</value>
+  </data>
+</root>

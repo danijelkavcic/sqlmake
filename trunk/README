@@ -1,0 +1,11 @@
+SQLMake, Copyright Mitja Golouh 2008-2012, mitja.golouh@gmail.com
+
+Information about sqlmake can be found at http://code.google.com/p/sqlmake/
+Please note: Sqlmake options not described in online help are not very well tested.
+
+
+Building Sqlmake on Windows
+===========================
+
+Visual Studio 2010 (Express) is used to compile Sqlmake
+NUNIT 2.5.9 is used for unit testing

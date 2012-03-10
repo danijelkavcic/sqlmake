@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="sqlmake" default="init" basedir=".">
+  <property name="db.env" value="local" overwrite="false"/>
+  <property name="db.dir" value="." overwrite="false"/>    
+
+  <target name="db.config">
+      <property name="configFile" value="${db.env}.config" />
+      <if test="${file::exists(configFile)}">
+          <echo message="Loading ${configFile}..." />
+          <include buildfile="${configFile}" />
+      </if>
+      <if test="${not file::exists(configFile)}">
+          <fail message="Configuration file '${configFile}' could not be found." />
+      </if>
+  </target>
+  
+  <target name="db.set.build.properties">
+	  <property name="db.user" value = "${db.build.user}"/>
+	  <property name="db.password" value = "${db.build.password}"/>
+    <property name="db.datasource" value = "${db.build.datasource}"/>  
+  </target>     
+ 
+  <target name="installDatamodel">
+    <exec program="sqlmake.exe" basedir="." workingdir="${db.dir}" output="sqlmake_datamodel.log">
+      <arg line="-install userid=${db.user}/${db.password}@${db.datasource} scripts=.\${db.user}\datamodel" />
+    </exec>
+  </target>
+
+  <target name="upgradeDatamodel">
+    <exec program="sqlmake.exe" basedir="." workingdir="${db.dir}" output="sqlmake_datamodel.log">
+      <arg line="-upgrade userid=${db.user}/${db.password}@${db.datasource} scripts=.\${db.user}" />
+    </exec>
+  </target>
+
+  <target name="upgradePlsql">
+    <exec program="sqlmake.exe" basedir="." workingdir="${db.dir}" output="sqlmake_datamodel.log">
+      <arg line="/db -plsql userid=${db.user}/${db.password}@${db.datasource} scripts=.\${db.user}" />    
+    </exec>
+  </target>
+  
+  <target name="db.clean-internal">
+    <echo message="Clean ${db.user}" />
+    <exec program="sqlplus.exe" workingdir="${db.dir}" output="sqlplus.log">
+      <arg line="-L -S ${db.user}/${db.password}@${db.datasource} @dba/drop_all_user_objects.sql" />
+    </exec>
+    <call target="verifySqlplusLog" />    
+  </target>
+
+  <target name="verifySqlplusLog">
+    <foreach item="Line" in="sqlplus.log" property="sqlplusLogLine">
+      <if test="${string::contains(sqlplusLogLine, 'ORA-')}">
+         <fail message="ORA specific errors found in log file" />         
+       </if>
+      <if test="${string::contains(sqlplusLogLine, 'SP2-')}">
+         <fail message="SQL*Plus specific errors found in log file" />         
+       </if>
+    </foreach>
+    <echo message="Log file contains no ORA- and SP2- errors" />
+  </target>
+
+  <!-- Only these target can be specified in the command line -->
+  <target name="db.clean" depends="db.config, db.clean-internal"/>   
+  <target name="db.build" depends="db.config, db.set.build.properties, db.clean-internal, installDatamodel, upgradeDatamodel, upgradePlsql"/>   
+  <target name="db.install" depends="db.config, installDatamodel, upgradeDatamodel, upgradePlsql"/>   
+  <target name="db.upgrade" depends="db.config, upgradeDatamodel, upgradePlsql"/>
+      
+</project>
