@@ -1,0 +1,1 @@
+create synonym COUNTRIES for smdemo.COUNTRIES;

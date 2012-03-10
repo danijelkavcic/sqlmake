@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLMake", "SQLMake\SQLMake.csproj", "{80C547C9-5AF7-4FAE-80D2-79D18A44F1A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLMake.Nant", "SQLMake\SQLMake.Nant.csproj", "{D88556C9-22CD-46D7-8F61-21C1C1DD629B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLMakeTest", "SQLMakeTest\SQLMakeTest.csproj", "{20EAACFA-7B85-433D-BD2A-DD61E4DB9D92}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80C547C9-5AF7-4FAE-80D2-79D18A44F1A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80C547C9-5AF7-4FAE-80D2-79D18A44F1A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80C547C9-5AF7-4FAE-80D2-79D18A44F1A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80C547C9-5AF7-4FAE-80D2-79D18A44F1A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D88556C9-22CD-46D7-8F61-21C1C1DD629B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D88556C9-22CD-46D7-8F61-21C1C1DD629B}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{20EAACFA-7B85-433D-BD2A-DD61E4DB9D92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20EAACFA-7B85-433D-BD2A-DD61E4DB9D92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20EAACFA-7B85-433D-BD2A-DD61E4DB9D92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20EAACFA-7B85-433D-BD2A-DD61E4DB9D92}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
