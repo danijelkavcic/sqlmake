@@ -16,6 +16,7 @@
   * [http://dbdeploy.com Dbdeploy]
   * [http://www.tewari.info/dbupdater/ DbUpdater]
   * [http://uptodater.sourceforge.net/ UpToDater]
+  * [http://http://code.google.com/p/flyway/ Flyway]
 
 == XML based deployment tools ==
   * [http://code.google.com/p/dbkeepernet/ DbKeeperNet]
